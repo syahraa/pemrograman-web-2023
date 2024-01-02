@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .div1{
+      display: flex;
+      height: 200%;
+      flex-direction: row;
+  }
+  .div2{
+      flex: 4;
+  }
+  header{
+      padding: 15px;
+      background-color: rgb(214, 98, 185);
+
+      box-sizing: border-box;
+      height: 10vh;
+  }
+  .isi{
+      display: flex;
+      flex: 1;
+      height: 80vh;
+  }
+  article {
+      flex: 4;
+      padding: 15px;
+      background-color: rgb(247, 185, 223);
+
+  }
+  aside{
+      flex: 1;
+      padding: 15px;
+      background-color: rgb(248, 145, 239));
+  }
+  nav{
+      flex: 1;
+      padding: 10px;
+      background-color: rgba(240, 96, 240, 0.747);
+  }
+  footer{
+      padding: 10px;
+      height: 10vh;
+      box-sizing: border-box;
+      background-color: rgb(134, 110, 134);
+
+  }

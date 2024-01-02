@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Login</title>
+  <style>
+    body {
+
+ align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+ display: flex;
+  height: 200vh;
+   margin: 10;
+    }
+    form {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="button" onclick="checkLogin()">Login</button>
+  </form>
+
+  <script>
+    function checkLogin() {
+      var usernameInput = document.getElementById('username').value;
+      var passwordInput = document.getElementById('password').value;
+
+      // Check username and password
+      if (usernameInput === 'syahraa' && passwordInput === 'ara22') {
+        // Redirect to the welcome page if login is successful
+        window.location.href = 'form.html';
+      } else {
+        alert('Username atau password salah!');
+      }
+    }
+  </script>
+
+</body>
+</html>

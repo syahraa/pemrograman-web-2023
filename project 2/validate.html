@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: hsl(315, 34%, 66%);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #eed6ee1a;
+      width: 300px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    .error {
+      color: #e7a5dc;
+      font-size: 14px;
+      margin-top: -12px;
+      margin-bottom: 12px;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <form id="bookingForm" onsubmit="return validateForm()">
+    <label for="namaPelanggan">Nama Pelanggan:</label>
+    <input type="text" id="namaPelanggan" name="namaPelanggan" maxlength="30" required>
+    <span id="namaPelangganError" class="error"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <span id="emailError" class="error"></span>
+
+    <label for="jamKeberangkatan">Jam Keberangkatan:</label>
+    <input type="text" id="jamKeberangkatan" name="jamKeberangkatan" placeholder="Format: 00.00 - 23.59" required>
+    <span id="jamKeberangkatanError" class="error"></span>
+
+    <label for="tujuanKeberangkatan">Tujuan Keberangkatan:</label>
+    <input type="text" id="tujuanKeberangkatan" name="tujuanKeberangkatan" required>
+    <span id="tujuanKeberangkatanError" class="error"></span>
+
+    <label for="jumlahTiket">Jumlah Tiket:</label>
+    <input type="number" id="jumlahTiket" name="jumlahTiket" min="1" max="10" required>
+    <span id="jumlahTiketError" class="error"></span>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- Output area -->
+  <div id="output"></div>
+
+  <script>
+  function validateForm() {
+   var namaPelanggan = document.getElementById('namaPelanggan').value;
+ var email = document.getElementById('email').value;
+var jamKeberangkatan = document.getElementById('jamKeberangkatan').value;
+ var tujuanKeberangkatan = document.getElementById('tujuanKeberangkatan').value;
+    var jumlahTiket = document.getElementById('jumlahTiket').value;
+    
+    document.getElementById('jamKeberangkatanError').innerHTML = "";
+    document.getElementById('tujuanKeberangkatanError').innerHTML = "";
+    document.getElementById('namaPelangganError').innerHTML = "";
+    document.getElementById('emailError').innerHTML = "";
+    document.getElementById('jumlahTiketError').innerHTML = "";
+
+    // Tampilkan hasil jika valid
+    var outputDiv = document.getElementById('output');
+    outputDiv.innerHTML = "<h2>Hasil:</h2>" +
+      "<p>Nama Pelanggan: " + namaPelanggan + "</p>" +
+      "<p>Email: " + email + "</p>" +
+      "<p>Jam Keberangkatan: " + jamKeberangkatan + "</p>" +
+      "<p>Tujuan Keberangkatan: " + tujuanKeberangkatan + "</p>" +
+      "<p>Jumlah Tiket: " + jumlahTiket + "</p>";
+
+    return false;
+  }
+</script>
+
+  </script>
+
+</body>
+</html>
